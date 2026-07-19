@@ -3,3 +3,6 @@
 
 # Preserve Markdown hard-break spaces in the reviewed, byte-identical article.
 src/content/posts/factory-pattern-in-practice.md whitespace=-trailing-space
+
+# Preserve whitespace from the authenticated CSDN Markdown sources.
+src/content/posts/csdn-*.md whitespace=-trailing-space,-space-before-tab

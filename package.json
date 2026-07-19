@@ -15,6 +15,8 @@
     "format:check": "prettier --check .",
     "format": "prettier --write .",
     "lint": "eslint .",
+    "migrate:csdn": "node ./scripts/migration/import-csdn.mjs",
+    "verify:csdn": "node ./scripts/migration/verify-csdn.mjs",
     "validate:public": "./scripts/content/validate-public.sh",
     "check:all": "pnpm validate:public && pnpm lint && pnpm build"
   },
