@@ -1,0 +1,4 @@
+#!/bin/sh
+set -eu
+./scripts/security/scan-secrets.sh worktree
+exec ./scripts/security/scan-secrets.sh history

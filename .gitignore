@@ -1,0 +1,14 @@
+.DS_Store
+*.local
+*.tmp
+*.log
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+generated/
+decrypted/
+.restore/

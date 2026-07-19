@@ -1,0 +1,34 @@
+title = "Personal repository secret policy"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "vless-uri"
+description = "VLESS connection URI"
+regex = '''vless:{1}/{2}[A-Za-z0-9._~:/?#\[\]@!$&'()*+,;=%-]+'''
+keywords = ["vless"]
+
+[[rules]]
+id = "age-private-key"
+description = "age private identity"
+regex = '''AGE-SECRET-KEY-1[0-9A-Z]+'''
+keywords = ["AGE-SECRET-KEY-1"]
+
+[[rules]]
+id = "private-key-block"
+description = "PEM private key"
+regex = '''-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----'''
+keywords = ["PRIVATE KEY"]
+
+[[rules]]
+id = "xray-uuid"
+description = "UUID assigned in a proxy configuration"
+regex = '''(?i)(?:uuid|client[_-]?id)[[:space:]]*[:=][[:space:]]*["']?[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}'''
+keywords = ["uuid", "client_id", "client-id"]
+
+[[rules]]
+id = "google-backup-code"
+description = "Google backup code in recovery-code context"
+regex = '''(?i)(?:google[[:space:]_-]*)?(?:backup|recovery)[[:space:]_-]*codes?[[:space:]:=-]*[0-9]{8}'''
+keywords = ["backup", "recovery"]
