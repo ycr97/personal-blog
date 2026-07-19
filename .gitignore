@@ -12,3 +12,19 @@
 generated/
 decrypted/
 .restore/
+
+# Astro build output and dependencies
+dist/
+.astro/
+node_modules/
+public/pagefind/
+.pnpm-store/
+
+# Tooling and local overrides
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.idea/
+compose.override.yaml
+.playwright-cli/

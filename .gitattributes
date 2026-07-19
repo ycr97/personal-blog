@@ -1,2 +1,5 @@
 * text=auto eol=lf
 *.age binary
+
+# Preserve Markdown hard-break spaces in the reviewed, byte-identical article.
+src/content/posts/factory-pattern-in-practice.md whitespace=-trailing-space
