@@ -5,4 +5,6 @@
 src/content/posts/factory-pattern-in-practice.md whitespace=-trailing-space
 
 # Preserve whitespace from the authenticated CSDN Markdown sources.
-src/content/posts/csdn-*.md whitespace=-trailing-space,-space-before-tab
+# Current CSDN article IDs contain eight or nine digits and form the filename suffix.
+src/content/posts/*-????????.md whitespace=-trailing-space,-space-before-tab
+src/content/posts/*-?????????.md whitespace=-trailing-space,-space-before-tab

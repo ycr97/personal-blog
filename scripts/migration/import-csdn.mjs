@@ -3,6 +3,7 @@ import { execFile } from "node:child_process";
 import { access, mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { promisify } from "node:util";
+import { csdnPostStem } from "./csdn-naming.mjs";
 
 const execFileAsync = promisify(execFile);
 
@@ -111,17 +112,6 @@ function inferCategory(title, tags) {
   if (/servlet|mvc|cookie|spring|feign|web/.test(text)) return "Web 开发";
   if (/java|jdk|jvm|线程|io|反射/.test(text)) return "Java";
   return "技术笔记";
-}
-
-function slugFor(title, id) {
-  const ascii = title
-    .normalize("NFKD")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "")
-    .slice(0, 48)
-    .replace(/-$/g, "");
-  return ascii ? `csdn-${id}-${ascii}` : `csdn-${id}`;
 }
 
 function inferTags(title) {
@@ -337,7 +327,7 @@ for (const [index, source] of sources.entries()) {
   const metadata = metadataFromSource(source);
   const cleaned = cleanMarkdown(source.markdown);
   const localized = await localizeImages(cleaned, source);
-  const slug = slugFor(source.title, source.id);
+  const slug = csdnPostStem(source.title, source.id);
   const postPath = path.join(postsDir, `${slug}.md`);
   const state = await writeManagedPost(
     postPath,

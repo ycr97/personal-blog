@@ -107,6 +107,17 @@ public/images/<article-slug>/image-name.png
 
 CSDN 迁移文章沿用 `public/images/csdn/<article-id>/`。不要直接依赖 CSDN 等第三方热链。
 
+### CSDN 迁移文章命名
+
+CSDN 文章文件使用“规范化标题 + CSDN 文章 ID”，例如：
+
+```text
+面试题-109106259.md
+Java-IO学习之IO模型-BIO-113928886.md
+```
+
+标题让仓库目录可读，末尾 ID 用于区分同名文章。公开 URL 由该文件名生成，因此重命名文章文件也会改变文章 URL。
+
 ## 本地开发
 
 ```sh
