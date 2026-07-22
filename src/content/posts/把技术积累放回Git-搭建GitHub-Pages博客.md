@@ -2,7 +2,7 @@
 author: "ycr97"
 pubDatetime: 2026-07-22T00:00:00+08:00
 title: "把技术积累放回 Git：基于 AstroPaper 搭建并持续发布我的 GitHub Pages 博客"
-draft: true
+draft: false
 tags: ["GitHub Pages", "Astro", "GitHub Actions", "个人博客"]
 category: "工程实践"
 description: "记录我如何基于 AstroPaper 搭建个人 GitHub Pages 技术博客，并通过 GitHub Actions、内容迁移和公开内容校验，把技术积累变成一条可持续发布的工程化流程。"
